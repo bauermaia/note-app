@@ -57,10 +57,10 @@ function App() {
 
     //es una funcion que al llamarla, recibe el id de la nota editada, el nuevo texto y recorre el array de notas hasta encontrar el que coincide con el de la nota buscada y actualza el texto
     //guarda la neuva lista de notas y resetea las en edición
-    const saveEditedNote = (id, newText, newColor) => {
+    const saveEditedNote = (id, newText) => {
       setNotesList((prevNotes) => {
         const updatedNotes = prevNotes.map((note) =>
-          note.id === id ? { ...note, text: newText, color: newColor } : note
+          note.id === id ? { ...note, text: newText } : note
         );
         updateLocalStorage(updatedNotes);
         return updatedNotes;
